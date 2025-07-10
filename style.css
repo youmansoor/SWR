@@ -1,0 +1,180 @@
+body {
+    background-color: #FFFFFF;
+    font-family: Arial, Helvetica, sans-serif;
+}
+header {
+    display: flex;
+    height: auto;
+    position: sticky;
+    top: 0;
+    background-color: white; /* Add a background to prevent content from showing through */
+    z-index: 1000; /* Ensure it stays above other elements */
+    padding: 1rem; /* Optional: for spacing */
+    align-items: center; /* Center items vertically */
+}
+nav {
+    display: flex;
+}
+nav ul {
+    display: flex;
+    list-style-type: none;
+    align-self: center;
+    margin-left: 125vh;
+}
+nav ul li {
+    margin-left: 4vh;
+}
+nav ul li a {
+    text-decoration: none;
+    color: #7f3e98;
+}
+nav ul li a:hover {
+    color: #87CEEB;
+}
+#main {
+    width: 50%;
+    margin-top: 1vh;
+    margin-left: 6vh;
+}
+#main h1 {
+    font-size: 8vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #7f3e98;
+    margin: 0; /* Removes default margin */
+    padding: 0.5vh 0; /* Adds minimal spacing between lines */
+    line-height: 1.1; /* Optional: controls spacing between lines */
+}
+/* #main-img {
+    margin-left: 65%;
+    margin-top: -100vh;
+    width: 50%;
+    height: 50%;
+    border: 1px solid;
+    border-radius: 40%;
+    box-shadow: #000;
+} */
+#Services {
+    text-align: center;
+    justify-content: center;
+}
+#Services h1 {
+    font-size: 7vh;
+    color: #7f3e98;
+}
+#Services .text {
+    margin-left: 55vh;
+    width: 50%;
+}
+#Services .container {
+    align-self: center;
+    justify-content: center;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.box {
+    display: block;
+    margin: 2vh;
+    padding: 1vh;
+    width: 30%;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.box:hover {
+    border: 1px solid #87CEEB;
+    transform: translateY(-7px);
+    cursor: pointer;
+}
+#Portfolio {
+    text-align: center;
+    justify-content: center;
+}
+#Portfolio h1 {
+    font-size: 7vh;
+    color: #7f3e98;
+}
+.segmented-nav {
+    display: flex;
+    justify-content: center;
+    margin-right: 120vh;
+  }
+  
+  .segmented-nav ul {
+    list-style: none;
+    /* display: flex; */
+    background-color: #f2f2f2;
+    border-radius: 50px;
+    padding: 5px 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  .segmented-nav ul li {
+    margin: 0 5px;
+  }
+  
+  .segmented-nav ul li a {
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 50px;
+    color: #87CEEB;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+    display: inline-block;
+  }
+  
+  .segmented-nav ul li a:hover {
+    background-color: rgba(135, 206, 235, 0.2);
+  }
+  
+  .segmented-nav ul li a.active {
+    background-color: white;
+    color: black;
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }  
+.container img {
+    margin: 2vh;
+    transition: all 0.3s ease;
+}
+.contact {
+    padding: 5vh;
+}
+.Contact {
+    float: right;
+    margin-top: -22.5vh;
+    margin-right: 10vh;
+}
+.Contact img {
+    padding: 2vh;
+}
+/* Dim background using body::before */
+body.dimmed::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999; /* Below the popup image */
+}
+
+/* Popup container — just enough to hold the image */
+#popup-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    display: none;
+}
+
+/* Popup image */
+#popup-image {
+    max-width: 80vw;
+    max-height: 80vh;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    cursor: pointer;
+}
