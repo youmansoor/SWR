@@ -12,6 +12,11 @@ header {
     padding: 1rem; /* Optional: for spacing */
     align-items: center; /* Center items vertically */
 }
+@media (max-width:786px) {
+    header img {
+        width: 20%;
+    }
+}
 nav {
     display: flex;
 }
@@ -30,6 +35,47 @@ nav ul li a {
 }
 nav ul li a:hover {
     color: #87CEEB;
+}
+
+/* Hamburger Button */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #7f3e98;
+}
+
+/* ✅ Responsive Styles */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background-color: #fff;
+        position: absolute;
+        margin-left: -40vh;
+        margin-top: 50vh;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 2vh 0;
+    }
+
+    nav ul li a {
+        font-size: 1.2rem;
+    }
 }
 #main {
     width: 50%;
@@ -253,20 +299,88 @@ body.dimmed::before {
     box-shadow: 0 0 20px rgba(0,0,0,0.4);
     cursor: pointer;
 }
-@media (max-width:768p) {
-    #popup-container {
+@media (max-width: 768px) {
+    #Portfolio h1 {
+        font-size: 5vh;
+    }
+
+    #Portfolio p {
+        padding: 0 2vh;
+        font-size: 1rem;
+    }
+
+    .segmented-nav {
+        justify-content: center;
+        margin: 2vh auto;
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .segmented-nav ul {
+        display: flex;
+        flex-wrap: nowrap;
+        padding: 5px 10px;
+        margin: 0 auto;
+        width: max-content;
+    }
+
+    .segmented-nav ul li {
+        margin: 0 4px;
+    }
+
+    .segmented-nav ul li a {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 2vh 0;
+    }
+
+    .container img {
+        width: 45%; /* Two per row */
+        margin: 2vh 1vh;
+    }
+
+    button[type="submit"] {
+        display: block;
+        margin: 3vh auto;
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    /* Optional: Adjust popup image size for smaller screens */
+    /* Popup container */
+#popup-container {
     position: fixed;
     top: 50%;
-    /* left: 50%; */
+    left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1000;
     display: none;
-}
-    #popup-image {
-    max-width: 80vw;
-    max-height: 80vh;
+    width: auto;
+    height: auto;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1vh;
+    background-color: rgba(255, 255, 255, 0.95);
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+/* Popup image */
+#popup-image {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
     cursor: pointer;
 }
+
 }
+

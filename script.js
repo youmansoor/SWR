@@ -47,3 +47,10 @@ const navLinks = document.querySelectorAll('.segmented-nav a');
       });
     });
   });
+
+  const toggleButton = document.querySelector('.menu-toggle');
+    const navLink = document.querySelector('.nav-links');
+
+    toggleButton.addEventListener('click', () => {
+        navLink.classList.toggle('active');
+    });
