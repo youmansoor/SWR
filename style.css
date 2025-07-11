@@ -44,6 +44,31 @@ nav ul li a:hover {
     padding: 0.5vh 0; /* Adds minimal spacing between lines */
     line-height: 1.1; /* Optional: controls spacing between lines */
 }
+@media (max-width:768px) {
+    #main {
+        width: 50%;
+        margin-top: 1vh;
+        margin-left: 6vh;
+    }
+    #main h1 {
+        font-size: 8vh;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #7f3e98;
+        margin: 0; /* Removes default margin */
+        padding: 0.5vh 0; /* Adds minimal spacing between lines */
+        line-height: 1.1; /* Optional: controls spacing between lines */
+    }
+    #main-2 {
+        margin-top: -20vh;
+        margin-right: -10vh;
+    }
+}
+@media (max-width:425px) {
+    #main-2 {
+        margin-top: -25vh;
+        margin-right: -70vh;
+    }
+}
 /* #main-img {
     margin-left: 65%;
     margin-top: -100vh;
@@ -85,6 +110,56 @@ nav ul li a:hover {
     border: 1px solid #87CEEB;
     transform: translateY(-7px);
     cursor: pointer;
+}
+@media (max-width:768px) {
+    #Services {
+        margin-top: 30vh;
+        text-align: center;
+        justify-content: center;
+    }
+    .text {
+        margin-right: 50vh;
+        justify-self: center;
+        width: 50%;
+    }
+}
+/* @media (max-width:425px) {
+    #Services {
+        margin-top: 30vh;
+        text-align: center;
+    }
+    .text {
+        margin-right: 50vh;
+        justify-self: center;
+        width: 50%;
+    }
+} */
+@media (max-width: 425px) {
+    #Services h1 {
+        font-size: 5vh;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    #Services .text {
+        width: 90%;
+        font-size: 1rem;
+        margin: 1vh auto;
+        text-align: center;
+    }
+
+    .box {
+        width: 90%;
+        margin: 1vh auto;
+    }
+
+    .box h2 {
+        font-size: 1.2rem;
+    }
+
+    .box p {
+        font-size: 1rem;
+    }
 }
 #Portfolio {
     text-align: center;
@@ -177,4 +252,21 @@ body.dimmed::before {
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0,0,0,0.4);
     cursor: pointer;
+}
+@media (max-width:768p) {
+    #popup-container {
+    position: fixed;
+    top: 50%;
+    /* left: 50%; */
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    display: none;
+}
+    #popup-image {
+    max-width: 80vw;
+    max-height: 80vh;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    cursor: pointer;
+}
 }
