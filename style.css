@@ -12,7 +12,7 @@ header {
     padding: 1rem; /* Optional: for spacing */
     align-items: center; /* Center items vertically */
 }
-@media (max-width:786px) {
+@media only screen and (max-width:768px) {
     header img {
         width: 20%;
     }
@@ -48,7 +48,7 @@ nav ul li a:hover {
 }
 
 /* ✅ Responsive Styles */
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) {
     .menu-toggle {
         display: block;
     }
@@ -90,7 +90,7 @@ nav ul li a:hover {
     padding: 0.5vh 0; /* Adds minimal spacing between lines */
     line-height: 1.1; /* Optional: controls spacing between lines */
 }
-@media (max-width:768px) {
+@media only screen and (max-width:768px) {
     #main {
         width: 50%;
         margin-top: 1vh;
@@ -109,10 +109,21 @@ nav ul li a:hover {
         margin-right: -10vh;
     }
 }
-@media (max-width:430px) {
+@media only screen and (max-width:430px) {
     #main-2 {
         margin-top: -25vh;
         margin-right: -20vh;
+    }
+}
+@media only screen and (max-width:375px){
+    #main h1 {
+        font-size: 4vh;
+    }
+    #main h2 {
+        font-size: 3vh;
+    }
+    #main-2 {
+        margin-top: -7vh;
     }
 }
 #Services {
@@ -148,7 +159,7 @@ nav ul li a:hover {
     transform: translateY(-7px);
     cursor: pointer;
 }
-@media (max-width:768px) {
+@media only screen and (max-width:768px) {
     #Services {
         margin-top: 30vh;
         text-align: center;
@@ -160,7 +171,7 @@ nav ul li a:hover {
         width: 50%;
     }
 }
-@media (max-width: 425px) {
+@media only screen and (max-width: 425px) {
     #Services h1 {
         font-size: 5vh;
         margin: 0 auto;
@@ -185,6 +196,11 @@ nav ul li a:hover {
 
     .box p {
         font-size: 1rem;
+    }
+}
+@media only screen and (max-width:375px){
+    #Services {
+        margin-top: 10vh;
     }
 }
 #Portfolio {
@@ -259,6 +275,9 @@ nav ul li a:hover {
     margin: 2vh;
     transition: all 0.3s ease;
 }
+#contact {
+    width: 100%;
+}
 .contact {
     padding: 5vh;
 }
@@ -270,7 +289,7 @@ nav ul li a:hover {
 .Contact img {
     padding: 2vh;
 }
-@media (max-width:425px) {
+@media only screen and (max-width:425px) {
     .contact {
         font-size: 3vh;
         text-align: center;
@@ -282,12 +301,20 @@ nav ul li a:hover {
     .Contact h2 {
         text-align: center;
     }
-    .Contact img {
-        margin-right: 5vh;
-    }
     .cont-2 {
         text-align: center;
         margin-top: 25vh;
+    }
+}
+@media only screen and (max-width:375px){
+    .contact {
+        font-size: 2vh;
+    }
+    .Contact h2 {
+        text-align: center;
+    }
+    .Contact img {
+        margin-left: 10vh;
     }
 }
 /* Dim background using body::before */
@@ -320,7 +347,7 @@ body.dimmed::before {
     box-shadow: 0 0 20px rgba(0,0,0,0.4);
     cursor: pointer;
 }
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) {
     #Portfolio h1 {
         font-size: 5vh;
     }
@@ -388,7 +415,7 @@ body.dimmed::before {
         cursor: pointer;
     }
 }
-@media (max-width:425px) {
+@media only screen and (max-width:425px) {
     #popup-container {
         position: fixed;
         top: 50%;
