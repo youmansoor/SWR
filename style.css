@@ -12,7 +12,7 @@ header {
     padding: 1rem; /* Optional: for spacing */
     align-items: center; /* Center items vertically */
 }
-@media only screen and (max-width:768px) {
+@media (max-width:1024px) {
     header img {
         width: 20%;
     }
@@ -48,7 +48,7 @@ nav ul li a:hover {
 }
 
 /* ✅ Responsive Styles */
-@media only screen and (max-width: 768px) {
+@media (max-width: 1024px) {
     .menu-toggle {
         display: block;
     }
@@ -90,7 +90,7 @@ nav ul li a:hover {
     padding: 0.5vh 0; /* Adds minimal spacing between lines */
     line-height: 1.1; /* Optional: controls spacing between lines */
 }
-@media only screen and (max-width:768px) {
+@media (max-width:1024px) {
     #main {
         width: 50%;
         margin-top: 1vh;
@@ -109,7 +109,7 @@ nav ul li a:hover {
         margin-right: -10vh;
     }
 }
-@media only screen and (max-width:425px) {
+@media (max-width:600px) {
     #main h1 {
         font-size: 4.5vh;
     }
@@ -117,11 +117,21 @@ nav ul li a:hover {
         font-size: 3.5vh;
     }
     #main-2 {
-        margin-top: -5vh;
+        margin-top: -12vh;
         margin-right: -20vh;
     }
 }
-@media only screen and (max-width:375px){
+@media (max-width:375px) {
+    #main-2 {
+        margin-left: 10vh;
+    }
+}
+@media (max-width:320px) {
+    #main-2 {
+        margin-top: -15vh;
+    }
+}
+/* @media  (max-width:375px){
     #main h1 {
         font-size: 4vh;
     }
@@ -131,7 +141,7 @@ nav ul li a:hover {
     #main-2 {
         margin-top: -7vh;
     }
-}
+} */
 #Services {
     text-align: center;
     justify-content: center;
@@ -165,7 +175,7 @@ nav ul li a:hover {
     transform: translateY(-7px);
     cursor: pointer;
 }
-@media only screen and (max-width:768px) {
+@media (max-width:1024px) {
     #Services {
         margin-top: 30vh;
         text-align: center;
@@ -177,9 +187,9 @@ nav ul li a:hover {
         width: 50%;
     }
 }
-@media only screen and (max-width: 425px) {
+@media (max-width: 600px) {
     #Services {
-        margin-top: 10vh;
+        margin-top: 15vh;
     }
     #Services h1 {
         font-size: 5vh;
@@ -207,11 +217,21 @@ nav ul li a:hover {
         font-size: 1rem;
     }
 }
-@media only screen and (max-width:375px){
+@media (max-width:375px) {
+    #Services {
+        margin-top: 25vh;
+    }
+}
+@media (max-width:320px) {
+    #Services {
+        margin-top: 25vh;
+    }
+}
+/* @media  (max-width:375px){
     #Services {
         margin-top: 10vh;
     }
-}
+} */
 #Portfolio {
     text-align: center;
     justify-content: center;
@@ -298,18 +318,18 @@ nav ul li a:hover {
 .Contact img {
     padding: 2vh;
 }
-@media only screen and (max-width:425px) {
+@media (max-width:600px) {
     #contact {
         text-align: center;
         justify-content: center;
         align-items: center;
     }
     .contact {
-        font-size: 2vh;
+        font-size: 2.5vh;
         text-align: center;
     }
     .Contact {
-        margin-right: 12vh;
+        margin-right: 18vh;
         margin-top: 0vh;
     }
     .Contact h2 {
@@ -320,7 +340,20 @@ nav ul li a:hover {
         margin-top: 25vh;
     }
 }
-@media only screen and (max-width:375px){
+@media (max-width:375px) {
+    .Contact {
+        margin-right: 13vh;
+    }
+}
+@media (max-width:320px){
+    .contact {
+        font-size: 2.2vh;
+    }
+    .Contact {
+        margin-right: 7vh;
+    }
+}
+/* @media (max-width:375px){
     .contact {
         font-size: 2vh;
     }
@@ -330,7 +363,7 @@ nav ul li a:hover {
     .Contact img {
         margin-left: 10vh;
     }
-}
+} */
 /* Dim background using body::before */
 body.dimmed::before {
     content: "";
@@ -361,7 +394,7 @@ body.dimmed::before {
     box-shadow: 0 0 20px rgba(0,0,0,0.4);
     cursor: pointer;
 }
-@media only screen and (max-width: 768px) {
+@media (max-width: 1024px) {
     #Portfolio h1 {
         font-size: 5vh;
     }
@@ -429,7 +462,7 @@ body.dimmed::before {
         cursor: pointer;
     }
 }
-@media only screen and (max-width:425px) {
+@media (max-width:600px) {
     #popup-container {
         position: fixed;
         top: 40%;
