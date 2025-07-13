@@ -223,13 +223,15 @@
     }
 
     .box h2 {
-      color: #7f3e98;
       margin-bottom: 0.5rem;
     }
 
     #Portfolio {
       text-align: center;
       padding: 4rem 2rem;
+    }
+    #Portfolio h1 {
+        color: #7f3e98;
     }
 
     .segmented-nav ul {
