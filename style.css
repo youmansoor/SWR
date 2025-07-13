@@ -12,7 +12,7 @@ header {
     padding: 1rem; /* Optional: for spacing */
     align-items: center; /* Center items vertically */
 }
-@media (max-width:1024px) {
+@media (max-width:1280px) {
     header img {
         width: 20%;
     }
@@ -25,6 +25,7 @@ nav ul {
     list-style-type: none;
     align-self: center;
     margin-left: 125vh;
+    float: right;
 }
 nav ul li {
     margin-left: 4vh;
@@ -48,7 +49,7 @@ nav ul li a:hover {
 }
 
 /* ✅ Responsive Styles */
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
     .menu-toggle {
         display: block;
     }
@@ -114,15 +115,22 @@ nav ul li a:hover {
         font-size: 4.5vh;
     }
     #main h2 {
-        font-size: 3.5vh;
+        font-size: 3vh;
     }
     #main-2 {
-        margin-top: -12vh;
+        margin-top: 10vh;
         margin-right: -20vh;
     }
 }
 @media (max-width:375px) {
+    #main h1 {
+        font-size: 4vh;
+    }
+    #main h2 {
+        font-size: 2.5vh;
+    }
     #main-2 {
+        margin-top: -5vh;
         margin-left: 10vh;
     }
 }
@@ -143,7 +151,9 @@ nav ul li a:hover {
     }
 } */
 #Services {
+    margin-top: 30vh;
     text-align: center;
+    align-items: center;
     justify-content: center;
 }
 #Services h1 {
@@ -152,6 +162,7 @@ nav ul li a:hover {
 }
 #Services .text {
     margin-left: 55vh;
+    text-align: center;
     width: 50%;
 }
 #Services .container {
@@ -227,12 +238,22 @@ nav ul li a:hover {
         margin-top: 25vh;
     }
 }
+@media (min-width:1281px) {
+    #Services {
+        width: 100%;
+    }
+    #Services .text {
+        margin-left: 35vh;
+        text-align: center;
+    }
+}
 /* @media  (max-width:375px){
     #Services {
         margin-top: 10vh;
     }
 } */
 #Portfolio {
+    margin-top: 30vh;
     text-align: center;
     justify-content: center;
 }
@@ -318,10 +339,10 @@ nav ul li a:hover {
 .Contact img {
     padding: 2vh;
 }
-@media (max-width:600px) {
+@media (max-width:667px) {
     #contact {
         text-align: center;
-        justify-content: center;
+        justify-items: center;
         align-items: center;
     }
     .contact {
@@ -329,7 +350,7 @@ nav ul li a:hover {
         text-align: center;
     }
     .Contact {
-        margin-right: 18vh;
+        margin-right: 40vh;
         margin-top: 0vh;
     }
     .Contact h2 {
@@ -340,17 +361,57 @@ nav ul li a:hover {
         margin-top: 25vh;
     }
 }
-@media (max-width:375px) {
+@media (max-width:320px) {
     .Contact {
-        margin-right: 13vh;
+        margin-left: 50vh;
     }
 }
-@media (max-width:320px){
+@media (max-width:375px) {
+    .Contact h2 {
+        /* text-align: center; */
+        margin-right: -20vh;
+        margin-top: 20vh;
+    }
+    .Contact img {
+        margin-left: 20vh;
+    }
+}
+@media (max-width:425px){
     .contact {
         font-size: 2.2vh;
     }
+    .Contact h2 {
+        margin-right: -30vh;
+        margin-left: 20vh;
+        margin-top: 30vh;
+    }
+    .Contact img {
+        margin-left: 10vh;
+    }
+}
+@media (max-width:812px) {
     .Contact {
-        margin-right: 7vh;
+        margin-top: -20vh;
+    }
+}
+@media (max-width:768px) {
+    .contact {
+        font-size: 1.8vh;
+    }
+    .Contact h2 {
+        text-align: center;
+        margin-left: 20vh;
+        margin-right: -20vh;
+        margin-top: 15vh;
+    }
+    .Contact img {
+        margin-right: -15vh;
+        margin-left: 25vh;
+    }
+}
+@media (max-width:1280px) {
+    .Contact {
+        margin-top: -16vh;
     }
 }
 /* @media (max-width:375px){
