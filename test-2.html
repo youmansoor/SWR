@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>SWR DESIGNS&MOTIONS</title>
+  <link rel="shortcut icon" href="IMG_20250618_165206.jpg" type="image/x-icon" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+    }
+
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header img {
+      width: 150px;
+    }
+
+    nav {
+      flex-grow: 1;
+      text-align: right;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      background: none;
+      border: none;
+      color: #7f3e98;
+      cursor: pointer;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      justify-content: flex-end;
+    }
+
+    .nav-links li {
+      margin-left: 2rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #7f3e98;
+      font-weight: bold;
+    }
+
+    .nav-links a:hover {
+      color: #87CEEB;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #fff;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        /* right: 1rem; */
+        text-align: center;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        padding: 1rem;
+        width: 100%;
+        z-index: 999;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links li {
+        margin: 1rem 0;
+      }
+    }
+
+    #main {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    #main h1 {
+      font-size: 3rem;
+      color: #7f3e98;
+    }
+
+    #main h2 {
+      font-size: 1.5rem;
+      color: #333;
+      margin-top: 1rem;
+    }
+
+    #main p {
+      margin-top: 1rem;
+      font-size: 1rem;
+      color: #555;
+    }
+
+    #main-2 img {
+      display: block;
+      margin: 2rem auto;
+      width: 50%;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    #Services {
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    #Services h1 {
+      color: #7f3e98;
+      font-size: 2rem;
+    }
+
+    #Services .text {
+      max-width: 600px;
+      margin: 1rem auto;
+      font-size: 1rem;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .box {
+      width: 280px;
+      margin: 1rem;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .box:hover {
+      transform: translateY(-5px);
+      border: 1px solid #87CEEB;
+    }
+
+    .box h2 {
+      color: #7f3e98;
+    }
+
+    .box p {
+      font-size: 0.95rem;
+      color: #444;
+    }
+
+    #Portfolio {
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    #Portfolio h1 {
+      font-size: 2rem;
+      color: #7f3e98;
+    }
+
+    .segmented-nav ul {
+      display: flex;
+      overflow-x: auto;
+      list-style: none;
+      padding: 0.5rem;
+      margin: 2rem auto;
+      background: #f2f2f2;
+      border-radius: 25px;
+      max-width: 90%;
+    }
+
+    .segmented-nav li {
+      margin: 0 0.5rem;
+      white-space: nowrap;
+    }
+
+    .segmented-nav a {
+      text-decoration: none;
+      color: #87CEEB;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-weight: bold;
+    }
+
+    .segmented-nav a.active {
+      background: white;
+      color: #000;
+    }
+
+    #Portfolio .container img {
+      width: 100%;
+      max-width: 300px;
+      margin: 1rem;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    button[type="submit"] {
+      margin-top: 2rem;
+      background-color: #7f3e98;
+      color: #fff;
+      padding: 0.8rem 2rem;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    #contact {
+      padding: 3rem 2rem;
+      background: #f9f9f9;
+      text-align: center;
+    }
+
+    #contact h2 {
+      color: #7f3e98;
+      margin-bottom: 1rem;
+    }
+
+    #contact a {
+      text-decoration: none;
+      color: #000;
+      margin: 0 1rem;
+      display: inline-block;
+    }
+
+    .Contact img {
+      width: 30px;
+      margin: 0.5rem;
+    }
+
+    .cont-2 p {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    @media (max-width: 768px) {
+      #main h1 {
+        font-size: 2rem;
+      }
+
+      #main-2 img {
+        width: 70%;
+      }
+
+      .box {
+        width: 90%;
+      }
+
+      .container img {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="IMG_20250618_165206.jpg" alt="SWR Logo" />
+    <button class="menu-toggle">☰</button>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#main">Home</a></li>
+        <li><a href="#Services">Services</a></li>
+        <li><a href="#Portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="main">
+    <h1>SWR DESIGNS&MOTIONS</h1>
+    <h2>Design. Edit. Automate. Dominate.</h2>
+    <p>We are a digital design agency specializing in high-impact visuals for brands. We deliver thumbnails, logos, animations, and more to elevate your brand's identity.</p>
+  </section>
+
+  <section id="main-2">
+    <img src="final logo-01.jpg" alt="Site Logo" />
+  </section>
+
+  <section id="Services">
+    <h1>The Art of Visual Storytelling</h1>
+    <p class="text">At SWR, we blend aesthetics with functionality to create designs that captivate and communicate. From sleek logos to dynamic motion graphics — our work is tailored to make your brand stand out.</p>
+    <div class="container">
+      <div class="box"><h2>Thumbnail Design</h2><p>Eye-catching thumbnails that drive engagement</p></div>
+      <div class="box"><h2>Logo & Branding</h2><p>Distinctive brand identity that leaves a mark</p></div>
+      <div class="box"><h2>Social Media Banners</h2><p>Compelling headers and banners</p></div>
+      <div class="box"><h2>Emotes</h2><p>Custom emotes that reflect your brand personality</p></div>
+      <div class="box"><h2>Posters</h2><p>Scroll-stopping visuals for impact</p></div>
+      <div class="box"><h2>Sub Badges</h2><p>Unique subscriber badges to build community</p></div>
+    </div>
+  </section>
+
+  <section id="Portfolio">
+    <h1>Our Portfolio</h1>
+    <div class="segmented-nav">
+      <ul>
+        <li><a href="#" class="active">Thumbnails</a></li>
+        <li><a href="#">Logos</a></li>
+        <li><a href="#">Banners</a></li>
+        <li><a href="#">Emotes</a></li>
+      </ul>
+    </div>
+    <div class="container">
+      <img src="Thumnails/Untitled-1 copy.jpg" alt="Thumbnail 1" />
+      <img src="Thumnails/FINAL COPY.jpg" alt="Thumbnail 2" />
+      <img src="Thumnails/THE ROCK THUMBNAIL copy.jpg" alt="Thumbnail 3" />
+      <img src="Thumnails/BEANIE BABIES copy.jpg" alt="Thumbnail 4" />
+    </div>
+    <button type="submit">View More Projects</button>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: <a href="mailto:business@swrdesignsansmotions.com">business@swrdesignsansmotions.com</a></p>
+    <p>Phone: <a href="tel:03192803249">0319-280-3249</a></p>
+    <div class="Contact">
+      <img src="instagram.png" alt="Instagram" />
+      <img src="facebook.png" alt="Facebook" />
+      <img src="twitter.png" alt="Twitter" />
+      <img src="youtube.png" alt="YouTube" />
+    </div>
+    <div class="cont-2">
+      <p>© 2025 SWR DESIGNS&MOTIONS. All rights reserved.</p>
+    </div>
+  </section>
+
+  <script>
+    const toggleButton = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    toggleButton.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
