@@ -61,7 +61,7 @@ nav ul li a:hover {
         width: 100%;
         background-color: #fff;
         position: absolute;
-        margin-left: -40vh;
+        margin-left: 0vh;
         margin-top: 50vh;
         box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
@@ -76,6 +76,11 @@ nav ul li a:hover {
 
     nav ul li a {
         font-size: 1.2rem;
+    }
+}
+@media (max-width:425px) {
+    .nav-links {
+        margin-left: -20vh;
     }
 }
 #main {
