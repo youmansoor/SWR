@@ -49,8 +49,17 @@ const navLinks = document.querySelectorAll('.segmented-nav a');
   });
 
   const toggleButton = document.querySelector('.menu-toggle');
-    const navLink = document.querySelector('.nav-links');
+const navLink = document.querySelector('.nav-links');
+const navItems = document.querySelectorAll('.nav-links a');
 
-    toggleButton.addEventListener('click', () => {
-        navLink.classList.toggle('active');
-    });
+// Toggle mobile menu
+toggleButton.addEventListener('click', () => {
+  navLink.classList.toggle('active');
+});
+
+// Close menu when a nav link is clicked (mobile)
+navItems.forEach(link => {
+  link.addEventListener('click', () => {
+    navLink.classList.remove('active');
+  });
+});

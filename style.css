@@ -150,26 +150,32 @@
     gap: 1rem;
     overflow-x: hidden;
   }
-
   #main {
     width: 100%;
+    padding: 0 1rem;
+    text-align: center;
   }
 
   #main h1 {
-    font-size: 1rem;
-    line-height: 1.2;
+    font-size: 1.5rem;
+    line-height: 1.3;
+    word-break: break-word;
+    margin-bottom: 0.5rem;
   }
 
   #main h2 {
-    font-size: 1.1rem;
+    font-size: 1rem;
+    word-break: break-word;
+    margin-bottom: 1rem;
   }
 
   #main p {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     width: 100%;
-    padding: 0 1rem;
+    padding: 0;
+    margin: 0 auto;
+    word-break: break-word;
   }
-
   #main-2 {
     width: 100%;
     display: flex;
@@ -274,25 +280,31 @@
       cursor: pointer;
     }
 
-    #contact {
+    /* Contact Section */
+#contact {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 3rem 2rem;
+  padding: 3rem 1rem;
   background: #f9f9f9;
-  text-align: left;
+  gap: 2rem;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
-.contact, .Contact {
+.contact,
+.Contact {
   flex: 1 1 45%;
-  margin: 1rem 0;
+  min-width: 260px;
+  max-width: 100%;
 }
 
 #contact h2 {
-    font-size: 3vh;
+  font-size: 1.5rem;
   color: #7f3e98;
   margin-bottom: 1rem;
+  word-break: break-word;
 }
 
 .contact img,
@@ -300,26 +312,34 @@
   display: inline-block;
   vertical-align: middle;
   margin-right: 0.5rem;
+  max-width: 30px;
+  height: auto;
 }
 
 .contact a {
-  display: inline-block;
+  display: block;
   margin-bottom: 1rem;
   font-size: 1rem;
+  color: #000000;
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.Contact img {
+  margin: 0.5rem 0.5rem 0.5rem 0;
+  cursor: pointer;
 }
 
 .cont-2 {
   flex: 1 1 100%;
   text-align: center;
   margin-top: 2rem;
-}
-
-.cont-2 p {
   font-size: 0.9rem;
   color: #777;
+  word-wrap: break-word;
 }
 
-/* Responsive: Stack on mobile */
+/* Responsive: Stack on small screens */
 @media (max-width: 768px) {
   #contact {
     flex-direction: column;
@@ -327,24 +347,28 @@
     text-align: center;
   }
 
-  .contact, .Contact {
+  .contact,
+  .Contact {
     flex: 1 1 100%;
-    max-width: 500px;
-  }
-
-  .contact a {
-    display: block;
-    margin: 0.5rem 0;
+    max-width: 100%;
   }
 
   .contact img,
   .Contact img {
+    margin: 0.5rem auto;
     display: block;
-    margin: 0.5rem auto; /* Center image horizontally */
+  }
+
+  .contact a {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .Contact img {
+    display: inline-block;
+    margin: 0.5rem;
   }
 }
-
-
     /* Popup */
     body.dimmed::before {
       content: "";
@@ -415,7 +439,7 @@
       }
     }
 
-    @media (max-width: 480px) {
+    /* @media (max-width: 480px) {
       #main h1 {
         font-size: 2rem;
       }
@@ -423,4 +447,4 @@
       #Portfolio .container img {
         flex: 1 1 100%;
       }
-    }
+    } */
