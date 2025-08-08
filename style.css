@@ -323,36 +323,39 @@ nav a:hover {
     }
     
     .segmented-nav {
-    display: flex;
-    justify-content: center; /* Center the nav itself */
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+  position: relative;
+  z-index: 1;
 }
 
 .segmented-nav ul {
-    display: flex;
-    justify-content: center; /* Center list items inside the ul */
-    list-style: none;
-    padding: 0.5rem;
-    margin: 2rem auto;
-    background: #f2f2f2;
-    border-radius: 25px;
-    max-width: 90%;
-    gap: 10px;
-    overflow-x: auto; /* Optional: remove if you want strict centering */
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0.5rem;
+  margin: 0 auto;
+  background: #f2f2f2;
+  border-radius: 25px;
+  max-width: 90%;
+  gap: 10px;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 .segmented-nav a {
-    text-decoration: none;
-    color: #87CEEB;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-weight: bold;
-    white-space: nowrap;
-    transition: all 0.3s ease;
+  text-decoration: none;
+  color: #87CEEB;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: all 0.3s ease;
 }
 
 .segmented-nav a.active {
-    background: white;
-    color: #000;
+  background: white;
+  color: #000;
 }
 
     #Portfolio .container img {
@@ -397,14 +400,9 @@ nav a:hover {
       cursor: pointer;
     }
     @media (max-width: 768px) {
-    .segmented-nav {
-      display: flex;
-      justify-content: center;
-    }
-      .segmented-nav ul {
-        gap: 6px;
-        padding: 0.3rem;
-    }
+    .segmented-nav ul {
+    gap: 6px;
+  }
     .container img{
       width: 28%;
     }
