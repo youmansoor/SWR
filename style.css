@@ -321,11 +321,12 @@ nav a:hover {
 }
 /* Ensure Portfolio section lays things out properly */
 #Portfolio {
-  text-align: center;
-  padding: 4rem 2rem;
-  position: relative;
-  z-index: 0;
-}
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+    #Portfolio h1 {
+        color: #7f3e98;
+    }
 
 /* Nav wrapper */
 .segmented-nav {
@@ -409,9 +410,18 @@ nav a:hover {
     padding: 0.4rem;
   }
 
-  .container img {
-    width: 45%;
-  }
+   .container img{
+      width: 28%;
+    }
+
+    #Portfolio p {
+        font-size: 15px;
+    }
+
+    #Portfolio button[type="submit"] {
+        font-size: 14px;
+        padding: 0.6rem 1.5rem;
+    }
 }
 
 /* Mobile */
@@ -433,9 +443,21 @@ nav a:hover {
     padding: 0.4rem 0.8rem;
   }
 
-  .container img {
-    width: 45%;
-  }
+  #Portfolio {
+        padding: 2rem 1rem;
+    }
+
+    #Portfolio h1 {
+        font-size: 28px;
+    }
+
+    #Portfolio .container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+    }
+    .container img{
+      width: 45%;
+    }
 }
 body.dimmed::before {
       content: "";
