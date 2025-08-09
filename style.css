@@ -455,7 +455,7 @@ nav a:hover {
 
     #Portfolio .container {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 1px;
+        gap: 2px;
     }
     .container img{
       width: 45%;
