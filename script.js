@@ -48,8 +48,24 @@ const navLinks = document.querySelectorAll('.segmented-nav a');
     });
   });
   const hamburger = document.getElementById('hamburger');
-  const navbar = document.getElementById('navbar');
+const navbar = document.getElementById('navbar');
+const navLink = navbar.querySelectorAll('a');
 
-  hamburger.addEventListener('click', () => {
-    navbar.classList.toggle('show');
+hamburger.addEventListener('click', () => {
+  navbar.classList.toggle('show');
+});
+
+// Close the navbar when a nav link is clicked
+navLink.forEach(link => {
+  link.addEventListener('click', () => {
+    navbar.classList.remove('show');
+  });
+});
+
+  window.addEventListener('load', () => {
+    const activeTab = document.querySelector('.nav-menu a.active');
+    if (activeTab && activeTab.offsetLeft) {
+      const parent = activeTab.parentElement.parentElement; // ul.nav-menu
+      parent.scrollLeft = activeTab.offsetLeft - parent.offsetWidth / 2 + activeTab.offsetWidth / 2;
+    }
   });

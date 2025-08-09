@@ -10,6 +10,9 @@ body {
     color: #2a003f;
     background-color: white;
 }
+html {
+  scroll-padding-top: 70px; /* adjust based on your header height */
+}
 
 /* Header */
 /* Base Header */
@@ -180,6 +183,8 @@ nav a:hover {
       flex-direction: column;
     }
     .hero-text {
+      text-align: left;
+      margin-left: -15vh;
       max-width: 100%;
     }
 
@@ -314,67 +319,125 @@ nav a:hover {
       width: 100%;
     }
 }
+/* Ensure Portfolio section lays things out properly */
 #Portfolio {
-      text-align: center;
-      padding: 4rem 2rem;
-    }
-    #Portfolio h1 {
-        color: #7f3e98;
-    }
-    
-    .segmented-nav {
+  text-align: center;
+  padding: 4rem 2rem;
+  position: relative;
+  z-index: 0;
+}
+
+/* Nav wrapper */
+.segmented-nav {
+  width: 100%;
   display: flex;
   justify-content: center;
-  margin: 2rem 0;
+  margin-bottom: 2rem; /* Push navbar above images */
   position: relative;
   z-index: 1;
 }
 
+/* Nav menu styles */
 .segmented-nav ul {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: flex-start; /* Allow scroll, don't force center here */
   list-style: none;
   padding: 0.5rem;
   margin: 0 auto;
   background: #f2f2f2;
   border-radius: 25px;
-  max-width: 90%;
   gap: 10px;
   overflow-x: auto;
   white-space: nowrap;
+  width: fit-content;
+  max-width: 90vw;
+  scroll-behavior: smooth;
 }
 
+/* Nav links */
 .segmented-nav a {
   text-decoration: none;
   color: #87CEEB;
   padding: 0.5rem 1rem;
   border-radius: 20px;
   font-weight: bold;
+  font-size: 0.9rem;
   transition: all 0.3s ease;
+  white-space: nowrap;
+  display: inline-block;
 }
 
+/* Active tab */
 .segmented-nav a.active {
   background: white;
   color: #000;
 }
 
-    #Portfolio .container img {
-      flex: 1 1 calc(25% - 1rem);
-      margin: 1vh;
-      border-radius: 10px;
-      cursor: pointer;
-    }
+/* Images */
+#Portfolio .container img {
+  flex: 1 1 calc(25% - 1rem);
+  margin: 1vh;
+  border-radius: 10px;
+  cursor: pointer;
+}
 
-    button[type="submit"] {
-      margin-top: 2rem;
-      background-color: #7f3e98;
-      color: #fff;
-      padding: 0.8rem 2rem;
-      border: none;
-      border-radius: 20px;
-      cursor: pointer;
-    }
-    body.dimmed::before {
+/* Tablet & below */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: fit-content;
+    overflow-x: auto;
+  }
+
+  .segmented-nav {
+    margin-top: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: -15vh;
+    margin-left: 7vh;
+    margin-bottom: 6.5rem; /* spacing above images */
+  }
+
+  .segmented-nav ul {
+    gap: 6px;
+    padding: 0.4rem;
+  }
+
+  .container img {
+    width: 45%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .segmented-nav {
+    margin-top: -5rem;
+    margin-bottom: 6rem;
+  }
+
+  .nav-menu {
+    justify-content: center;
+    width: fit-content;
+    max-width: 90vw;
+    overflow-x: auto;
+  }
+
+  .segmented-nav a {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .container img {
+    width: 45%;
+  }
+}
+body.dimmed::before {
       content: "";
       position: fixed;
       top: 0; left: 0;
@@ -399,41 +462,6 @@ nav a:hover {
       box-shadow: 0 0 20px rgba(0,0,0,0.4);
       cursor: pointer;
     }
-    @media (max-width: 768px) {
-    .segmented-nav ul {
-    gap: 6px;
-  }
-    .container img{
-      width: 28%;
-    }
-
-    #Portfolio p {
-        font-size: 15px;
-    }
-
-    #Portfolio button[type="submit"] {
-        font-size: 14px;
-        padding: 0.6rem 1.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    #Portfolio {
-        padding: 2rem 1rem;
-    }
-
-    #Portfolio h1 {
-        font-size: 28px;
-    }
-
-    #Portfolio .container {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 15px;
-    }
-    .container img{
-      width: 45%;
-    }
-}
 /* #contact {
   display: flex;
   padding: 5vh;
