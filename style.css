@@ -384,6 +384,30 @@ nav a:hover {
   border-radius: 10px;
   cursor: pointer;
 }
+.container img {
+      width: 22%;
+      display: none; /* Hide all images by default */
+    }
+
+    /* Only show thumbnail images by default */
+    .container img[data-category="thumbnails"] {
+      display: inline-block;
+    }
+    #viewMoreBtn {
+      display: none;
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #viewMoreBtn:hover {
+      background-color: #0056b3;
+    }
 
 /* Tablet & below */
 @media (max-width: 768px) {

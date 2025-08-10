@@ -15,38 +15,56 @@ popupImage.addEventListener('click', () => {
     document.body.classList.remove('dimmed');
 });
 
-const navLinks = document.querySelectorAll('.segmented-nav a');
-  navLinks.forEach(link => {
-    link.addEventListener('click', function() {
-      navLinks.forEach(l => l.classList.remove('active'));
-      this.classList.add('active');
-    });
-  });
 
-  const filterLinks = document.querySelectorAll('.segmented-nav a');
-  const images = document.querySelectorAll('.container img');
+    const navLinks = document.querySelectorAll('.segmented-nav a');
+    const images = document.querySelectorAll('.container img');
+    const viewMoreBtn = document.getElementById('viewMoreBtn');
+    const maxInitial = 16;
+    let currentCategory = 'thumbnails';
 
-  filterLinks.forEach(link => {
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
-
-      // Remove active class from all
-      filterLinks.forEach(l => l.classList.remove('active'));
-      this.classList.add('active');
-
-      const category = this.textContent.trim().toLowerCase();
+    function filterImages(category, showAll = false) {
+      let visibleCount = 0;
+      currentCategory = category;
 
       images.forEach(img => {
         const imgCategory = img.getAttribute('data-category');
 
-        if (category === 'thumbnails' || imgCategory === category) {
-          img.style.display = 'inline-block';
+        if (imgCategory === category) {
+          if (showAll || visibleCount < maxInitial) {
+            img.style.display = 'inline-block';
+            visibleCount++;
+          } else {
+            img.style.display = 'none';
+          }
         } else {
           img.style.display = 'none';
         }
       });
+
+      // Show "View More" button only if there are more than maxInitial images
+      const totalInCategory = Array.from(images).filter(img => img.getAttribute('data-category') === category).length;
+      viewMoreBtn.style.display = (totalInCategory > maxInitial && !showAll) ? 'inline-block' : 'none';
+    }
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        navLinks.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+
+        const category = this.textContent.trim().toLowerCase();
+        filterImages(category, false);
+      });
     });
-  });
+
+    viewMoreBtn.addEventListener('click', () => {
+      filterImages(currentCategory, true);
+    });
+
+    // Initial load
+    filterImages('thumbnails', false);
+
   const hamburger = document.getElementById('hamburger');
 const navbar = document.getElementById('navbar');
 const navLink = navbar.querySelectorAll('a');
