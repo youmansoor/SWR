@@ -132,24 +132,25 @@
 
     /* Image Grid */
     .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      padding: 0 1.5rem 3rem;
-    }
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+  gap: 20px;
+  padding: 0 1.5rem 3rem;
+}
 
-    .gallery img {
-      width: 240px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-      transition: transform 0.2s ease;
-      cursor: pointer;
-    }
+.gallery img {
+  width: calc(25% - 15px); /* 4 per row with space for gap */
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
 
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
 
     @media (max-width: 600px) {
       .gallery img {
@@ -209,22 +210,22 @@ const imagePaths = {
     "Thumnails/dyfgdy.jpg",
     "Thumnails/THE ROCK THUMBNAIL copy.jpg",
     "Thumnails/PRIME.jpg",
-    "Thumnails/BEANIE BABIES copy.jpg",
     "Thumnails/ANGRY BIRDS.jpg",
     "Thumnails/GVCG copy.jpg",
-    "Thumnails/sdfhc.jpg",
     "Thumnails/GV copy.jpg",
+    "Thumnails/sdfhc.jpg",
+    "Thumnails/GDS.jpg",
     "Thumnails/Untitled-1.jpg",
     "Thumnails/dvz.jpg",
-    "Thumnails/GDS.jpg",
     "Thumnails/alex thumbnail.jpg",
-    "Thumnails/KHABIB THUMBNAIL.jpg",
-    "Thumnails/sgd.jpg",
     "Thumnails/world affairs copy.jpg",
-    "Thumnails/xcv.jpg",
-    "Thumnails/xv.jpg",
+    "Thumnails/BEANIE BABIES copy.jpg",
+    "Thumnails/cbv.jpg",
+    "Thumnails/DGVF.jpg",
     "Thumnails/fing thumbnail.jpg",
-    "Thumnails/Untitled-1 copy_139261768467811.jpg"
+    "Thumnails/KHABIB THUMBNAIL.jpg",
+    "Thumnails/MOBILE.jpg",
+    "Thumnails/sgd.jpg"
   ],
   logos: [
     "logos/Eagel Mascot-01.jpg",
@@ -262,7 +263,14 @@ const imagePaths = {
     "emotes/Screenshot_20231114_144849_com.whatsapp_edit_185635851051881.jpg"
   ],
   posters: [],
-  badges: []
+  badges: [
+    "badges/Screenshot_20231114_144732_com.android.gallery3d_edit_185582164851368.jpg",
+    "badges/Screenshot_20231114_144723_com.android.gallery3d_edit_185557622922726.jpg",
+    "badges/Screenshot_20231114_144726_com.android.gallery3d_edit_185570477995641.jpg",
+    "badges/Screenshot_20231114_144852_com.whatsapp_edit_185646994428442.jpg",
+    "badges/IMG-20220604-WA0044.jpg",
+    "badges/IMG-20220604-WA0025.jpg"
+  ]
 };
 
 // Load images based on category
