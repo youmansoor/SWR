@@ -555,6 +555,11 @@ footer{
       height: 24px;
       filter: brightness(0) saturate(100%) invert(19%) sepia(96%) saturate(2099%) hue-rotate(254deg) brightness(97%) contrast(99%);
     }
+    .social-icons i {
+      padding: 1vh;
+      font-size: 36px;
+    color: #7e3f98;
+  }
 
     footer {
       text-align: center;
