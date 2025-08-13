@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>All Our Projects</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff;
+    }
+
+    /* Header */
+    header {
+      background-color: #7e3f98;
+      color: white;
+      padding: 2rem 1.5rem 1rem;
+      text-align: left;
+    }
+
+    header a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1rem;
+    }
+    .segmented-nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.segmented-nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  list-style: none;
+  padding: 0.5rem;
+  margin: 0 auto;
+  background: #f2f2f2;
+  border-radius: 25px;
+  gap: 10px;
+  overflow-x: auto;
+  white-space: nowrap;
+  width: fit-content;
+  max-width: 90vw;
+  scroll-behavior: smooth;
+}
+
+.segmented-nav a {
+  text-decoration: none;
+  color: #87CEEB;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.segmented-nav a.active {
+  background: white;
+  color: #000;
+}
+
+    /* Category Tabs */
+    .tabs {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 1.5rem 0;
+    }
+
+    .tabs button {
+      padding: 0.5rem 1.2rem;
+      border: none;
+      border-radius: 20px;
+      background-color: #f0f0f0;
+      color: #555;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .tabs button.active {
+      background-color: #7e3f98;
+      color: white;
+    }
+
+    body.dimmed::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+}
+
+#popup-container {
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  display: none;
+}
+
+#popup-image {
+  max-width: 80vw;
+  max-height: 80vh;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  cursor: pointer;
+}
+
+    /* Image Grid */
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 0 1.5rem 3rem;
+    }
+
+    .gallery img {
+      width: 240px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: transform 0.2s ease;
+      cursor: pointer;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 600px) {
+      .gallery img {
+        width: 90%;
+      }
+
+      .tabs {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding: 0 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <a href="index.html#Portfolio">← Back to Home</a>
+    <h1>All Our Projects</h1>
+    <p>Explore our complete portfolio of creative work</p>
+  </header>
+
+  <!-- Category Tabs -->
+  <nav class="segmented-nav">
+  <ul class="nav-menu">
+    <li><a href="#" class="active" data-category="thumbnails">Thumbnails</a></li>
+    <li><a href="#" data-category="logos">Logos</a></li>
+    <li><a href="#" data-category="banners">Banners</a></li>
+    <li><a href="#" data-category="emotes">Emotes</a></li>
+    <li><a href="#" data-category="posters">Posters</a></li>
+    <li><a href="#" data-category="badges">Badges</a></li>
+  </ul>
+</nav>
+
+  <!-- Gallery Section -->
+  <div class="gallery" id="galleryContainer"></div>
+  <div id="popup-container">
+  <img id="popup-image" src="" alt="">
+</div>
+
+  <!-- JavaScript -->
+  <script>
+// DOM Elements
+const navLinks = document.querySelectorAll('.segmented-nav a');
+const galleryContainer = document.getElementById('galleryContainer');
+const popupContainer = document.getElementById('popup-container');
+const popupImage = document.getElementById('popup-image');
+
+// Define your image paths for each category
+const imagePaths = {
+  thumbnails: [
+    "Thumnails/Untitled-1 copy.jpg",
+    "Thumnails/FINAL COPY .jpg",
+    "Thumnails/FINAL COPY.jpg",
+    "Thumnails/dyfgdy.jpg",
+    "Thumnails/THE ROCK THUMBNAIL copy.jpg",
+    "Thumnails/PRIME.jpg",
+    "Thumnails/BEANIE BABIES copy.jpg",
+    "Thumnails/ANGRY BIRDS.jpg",
+    "Thumnails/GVCG copy.jpg",
+    "Thumnails/sdfhc.jpg",
+    "Thumnails/GV copy.jpg",
+    "Thumnails/Untitled-1.jpg",
+    "Thumnails/dvz.jpg",
+    "Thumnails/GDS.jpg",
+    "Thumnails/alex thumbnail.jpg",
+    "Thumnails/KHABIB THUMBNAIL.jpg",
+    "Thumnails/sgd.jpg",
+    "Thumnails/world affairs copy.jpg",
+    "Thumnails/xcv.jpg",
+    "Thumnails/xv.jpg",
+    "Thumnails/fing thumbnail.jpg",
+    "Thumnails/Untitled-1 copy_139261768467811.jpg"
+  ],
+  logos: [
+    "logos/Eagel Mascot-01.jpg",
+    "logos/IMG-20220808-WA0013.jpg",
+    "logos/IMG-20220819-WA0021.jpg",
+    "logos/Screenshot_20231114_125248_com.whatsapp_edit_178619490460243.jpg",
+    "logos/Screenshot_20231114_125351_com.whatsapp_edit_178642615487844.jpg",
+    "logos/Screenshot_20231114_165638_com.huawei.himovie.overseas_edit_249341472981222.jpg",
+    "logos/IMG-20220625-WA0028.jpg",
+    "logos/IMG-20231130-WA0005.jpg",
+    "logos/IMG-20220604-WA0031.jpg"
+  ],
+  banners: [
+    "banners/Screenshot_20231114_125125_com.android.gallery3d_edit_183901132177666.jpg",
+    "banners/Screenshot_20231114_142750_com.android.gallery3d_edit_184074586063577.jpg",
+    "banners/Screenshot_20231114_124815_com.android.gallery3d_edit_178461534419642.jpg",
+    "banners/Screenshot_20231114_124823_com.android.gallery3d_edit_178484842682139.jpg",
+    "banners/Screenshot_20231114_124829_com.android.gallery3d_edit_178532297331090.jpg",
+    "banners/Screenshot_20231114_124845_com.android.gallery3d_edit_183766018516229.jpg",
+    "banners/Screenshot_20231114_124847_com.android.gallery3d_edit_183783889001122.jpg"
+  ],
+  emotes: [
+    "emotes/Screenshot_20250728_132431_com.instagram.android_edit_16803737782851.jpg",
+    "emotes/Screenshot_20250728_132434_com.instagram.android_edit_16820661563578.jpg",
+    "emotes/Screenshot_20250728_132439_com.instagram.android_edit_16835476637534.jpg",
+    "emotes/Screenshot_20231114_165908_com.huawei.himovie.overseas_edit_250114047053500.jpg",
+    "emotes/Screenshot_20231114_143648_com.android.gallery3d_edit_184721008557229.jpg",
+    "emotes/Screenshot_20231114_165929_com.huawei.himovie.overseas_edit_250223390919630.jpg",
+    "emotes/Screenshot_20231114_143716_com.android.gallery3d_edit_184750249168162.jpg",
+    "emotes/Screenshot_20231114_143812_com.android.gallery3d_edit_184896634120744.jpg",
+    "emotes/Screenshot_20231114_143835_com.android.gallery3d_edit_184905989222826.jpg",
+    "emotes/Screenshot_20231114_144957_com.twitter.android_edit_185667098539376.jpg",
+    "emotes/Screenshot_20231114_165905_com.huawei.himovie.overseas_edit_250102059833190.jpg",
+    "emotes/Preview 7-01.jpg",
+    "emotes/Screenshot_20231114_144849_com.whatsapp_edit_185635851051881.jpg"
+  ],
+  posters: [],
+  badges: []
+};
+
+// Load images based on category
+function loadImages(category) {
+  galleryContainer.innerHTML = ''; // clear previous
+
+  if (!imagePaths[category] || imagePaths[category].length === 0) {
+    galleryContainer.innerHTML = '<p>No images found in this category.</p>';
+    return;
+  }
+
+  imagePaths[category].forEach(path => {
+    const img = document.createElement('img');
+    img.src = path;
+    img.alt = "Project Image";
+    galleryContainer.appendChild(img);
+  });
+}
+
+// Handle tab switching
+navLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    navLinks.forEach(l => l.classList.remove('active'));
+    link.classList.add('active');
+
+    const category = link.getAttribute('data-category');
+    loadImages(category);
+  });
+});
+
+// Image click for popup viewer
+galleryContainer.addEventListener('click', (e) => {
+  if (e.target.tagName === 'IMG') {
+    popupImage.src = e.target.src;
+    popupContainer.style.display = 'block';
+    document.body.classList.add('dimmed');
+  }
+});
+
+popupImage.addEventListener('click', () => {
+  popupContainer.style.display = 'none';
+  document.body.classList.remove('dimmed');
+});
+
+// Load from URL param if present
+const params = new URLSearchParams(window.location.search);
+const defaultCategory = params.get("category") || "thumbnails";
+document.querySelector(`.segmented-nav a[data-category="${defaultCategory}"]`)?.classList.add('active');
+loadImages(defaultCategory);
+</script>
+
+
+</body>
+</html>

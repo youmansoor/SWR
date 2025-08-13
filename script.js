@@ -59,8 +59,9 @@ popupImage.addEventListener('click', () => {
     });
 
     viewMoreBtn.addEventListener('click', () => {
-      filterImages(currentCategory, true);
-    });
+  window.location.href = `portfolio-gallery.html?category=${currentCategory}`;
+});
+
 
     // Initial load
     filterImages('thumbnails', false);
