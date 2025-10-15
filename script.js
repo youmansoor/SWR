@@ -1,19 +1,33 @@
-const thumbnails = document.querySelectorAll('#Portfolio .container img');
-const popupContainer = document.getElementById('popup-container');
-const popupImage = document.getElementById('popup-image');
-thumbnails.forEach(img => {
-    img.addEventListener('click', () => {
-        popupImage.src = img.src;
-        popupContainer.style.display = 'block';
-        document.body.classList.add('dimmed');
-    });
-});
 
-// Click image to close popup
-popupImage.addEventListener('click', () => {
+  const popupContainer = document.getElementById('popup-container');
+  const popupImage = document.getElementById('popup-image');
+  const popupClose = document.getElementById('popup-close');
+
+  // Show popup when an image is clicked
+  document.querySelectorAll('.container img').forEach(img => {
+    img.addEventListener('click', () => {
+      popupImage.src = img.src;
+      popupContainer.style.display = 'block';
+      document.body.classList.add('dimmed');
+    });
+  });
+
+  // Close popup when close button is clicked
+  popupClose.addEventListener('click', () => {
     popupContainer.style.display = 'none';
+    popupImage.src = '';
     document.body.classList.remove('dimmed');
-});
+  });
+
+  // Optional: click outside image to close popup
+  popupContainer.addEventListener('click', (e) => {
+    if (e.target === popupContainer) {
+      popupContainer.style.display = 'none';
+      popupImage.src = '';
+      document.body.classList.remove('dimmed');
+    }
+  });
+
 
 
     const navLinks = document.querySelectorAll('.segmented-nav a');

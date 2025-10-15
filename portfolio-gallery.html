@@ -119,10 +119,12 @@
 
 #popup-container {
   position: fixed;
-  top: 50%; left: 50%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1000;
   display: none;
+  text-align: center;
 }
 
 #popup-image {
@@ -131,6 +133,22 @@
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0,0,0,0.4);
   cursor: pointer;
+  position: relative;
+}
+
+#popup-close {
+  position: absolute;
+  top: -25px;
+  right: -25px;
+  background: #fff;
+  color: #000;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 5px 10px;
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+  z-index: 1001;
 }
 
     /* Image Grid */
@@ -238,6 +256,7 @@
   <!-- Gallery Section -->
   <div class="gallery" id="galleryContainer"></div>
   <div id="popup-container">
+    <span id="popup-close">&times;</span>
   <img id="popup-image" src="" alt="">
 </div>
 
@@ -248,6 +267,7 @@ const navLinks = document.querySelectorAll('.segmented-nav a');
 const galleryContainer = document.getElementById('galleryContainer');
 const popupContainer = document.getElementById('popup-container');
 const popupImage = document.getElementById('popup-image');
+const popupClose = document.getElementById('popup-close');
 
 // Define your image paths for each category
 const imagePaths = {
@@ -362,6 +382,11 @@ galleryContainer.addEventListener('click', (e) => {
 });
 
 popupImage.addEventListener('click', () => {
+  popupContainer.style.display = 'none';
+  document.body.classList.remove('dimmed');
+});
+
+popupClose.addEventListener('click', () => {
   popupContainer.style.display = 'none';
   document.body.classList.remove('dimmed');
 });
