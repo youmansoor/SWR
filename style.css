@@ -502,7 +502,7 @@ nav a:hover {
       width: 45%;
     }
 }
-/* Popup overlay background */
+/* Popup overlay */
 body.dimmed::before {
   content: "";
   position: fixed;
@@ -522,32 +522,43 @@ body.dimmed::before {
   display: none;
 }
 
+/* Inner wrapper for image and close button */
+.popup-inner {
+  position: relative;
+  display: inline-block;
+}
+
 /* Popup image */
 #popup-image {
   max-width: 80vw;
   max-height: 80vh;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  display: block;
 }
 
-/* Close button */
+/* Close button INSIDE the image */
 #popup-close {
   position: absolute;
-  top: -15px;
-  right: -15px;
-  background-color: #fff;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
   color: #000;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bold;
   border-radius: 50%;
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
   z-index: 1001;
+  transition: background-color 0.2s ease;
+}
+
+#popup-close:hover {
+  background-color: rgba(255, 255, 255, 1);
 }
 /* #contact {
   display: flex;

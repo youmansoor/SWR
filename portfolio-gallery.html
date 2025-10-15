@@ -107,7 +107,8 @@
       color: white;
     }
 
-    body.dimmed::before {
+    /* Dim background when popup is active */
+body.dimmed::before {
   content: "";
   position: fixed;
   top: 0; left: 0;
@@ -117,6 +118,7 @@
   z-index: 999;
 }
 
+/* Popup container centered */
 #popup-container {
   position: fixed;
   top: 50%;
@@ -124,31 +126,45 @@
   transform: translate(-50%, -50%);
   z-index: 1000;
   display: none;
-  text-align: center;
 }
 
+/* Inner wrapper to position close button */
+.popup-inner {
+  position: relative;
+  display: inline-block;
+}
+
+/* Popup image */
 #popup-image {
   max-width: 80vw;
   max-height: 80vh;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0,0,0,0.4);
-  cursor: pointer;
-  position: relative;
+  display: block;
 }
 
+/* Close button INSIDE the image */
 #popup-close {
   position: absolute;
-  top: -25px;
-  right: -25px;
-  background: #fff;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.8);
   color: #000;
   font-size: 24px;
   font-weight: bold;
   border-radius: 50%;
-  padding: 5px 10px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
-  z-index: 1001;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.2s ease;
+}
+
+#popup-close:hover {
+  background: rgba(255, 255, 255, 1);
 }
 
     /* Image Grid */
@@ -256,8 +272,10 @@
   <!-- Gallery Section -->
   <div class="gallery" id="galleryContainer"></div>
   <div id="popup-container">
+  <div class="popup-inner">
     <span id="popup-close">&times;</span>
-  <img id="popup-image" src="" alt="">
+    <img id="popup-image" src="" alt="Project Image">
+  </div>
 </div>
 
   <!-- JavaScript -->
